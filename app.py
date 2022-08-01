@@ -1,12 +1,7 @@
 import conexao
 
-con = conexao.Conexao('smartentryhomol.cjgzoxlh8rpz.sa-east-1.rds.amazonaws.com',
-'postgres', 'root', 'Ciencia2022')
+class Carro():
+    def __init__(self):
+        conexao.Connection.__init__(self)
 
-sql = "INSERT INTO ECARRO VALUES (default , 'BR5-FJHG', 1)"
-
-if con.inserir(sql):
-    print("inserido com sucesso!")
-else:
-    print("Fail")
 
