@@ -1,7 +1,5 @@
 import cv2
 import imutils
-import pytesseract
-pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/Tesseract.exe'
 
 def reconhecePlaca():
     webcam = cv2.VideoCapture(0)
@@ -9,10 +7,8 @@ def reconhecePlaca():
         validacao, frame = webcam.read()
         while validacao:
             validacao, frame = webcam.read()
-            frame_cinza = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)  # CINZA
-            blur = cv2.bilateralFilter(frame_cinza, 11, 17, 17)  # RUIDO
-            edged = cv2.Canny(blur, 30, 200)  # linhas e contornos
-            conts = encontrar_contornos(edged)
+
+            conts = encontrar_contornos(preProcessamentoContornos(frame))
 
             localizacao = 0
             for c in conts:
@@ -23,8 +19,7 @@ def reconhecePlaca():
                         (x, y, alt, larg) = cv2.boundingRect(c)
                         cv2.rectangle(frame, (x, y), (x + alt, y + larg), (0, 255, 0), 2)
                         roi = frame[y + 3:(y + larg) - 3, x + 5:(x + alt) - 5]
-                        preProcessametoPlaca(roi)
-                        ocrImageRoiPlaca()
+                        preProcessamentoPlaca(roi)
                         break
 
             cv2.imshow("portão", frame)
@@ -42,7 +37,7 @@ def encontrar_contornos(img):
     conts = sorted(conts, key=cv2.contourArea, reverse=True)[:8]
     return conts
 
-def preProcessametoPlaca(roi):
+def preProcessamentoPlaca(roi):
     if roi is None:
         return
 
@@ -53,16 +48,11 @@ def preProcessametoPlaca(roi):
 
     cv2.imwrite("imgs/reconhecimento.jpg", img_binary)
 
-def ocrImageRoiPlaca():
-    img_roi = cv2.imread("imgs/reconhecimento.jpg")
+def preProcessamentoContornos(frame):
+    frame_cinza = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)  # CINZA
+    blur = cv2.bilateralFilter(frame_cinza, 11, 17, 17)  # RUIDO
+    edged = cv2.Canny(blur, 30, 200)  # linhas e contornos
+    return edged
 
-    config = r'-c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 --psm 6'
-
-    saida = pytesseract.image_to_string(img_roi, lang="eng", config=config)
-
-    print(saida)
-
-if __name__ == "__main__":
-    reconhecePlaca()
 
 

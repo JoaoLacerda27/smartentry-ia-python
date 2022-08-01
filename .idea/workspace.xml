@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57f8d1b5-bfe2-491c-9566-2bb9a7a078be" name="Changes" comment="">
+    <list default="true" id="57f8d1b5-bfe2-491c-9566-2bb9a7a078be" name="Changes" comment="Melhoria na classe de conexão.">
+      <change afterPath="$PROJECT_DIR$/crud.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reconhecimento_caracter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conexao.py" beforeDir="false" afterPath="$PROJECT_DIR$/conexao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleWebcam.py" beforeDir="false" afterPath="$PROJECT_DIR$/controleWebcam.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/reconhecimento.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/reconhecimento.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleWebcam.py" beforeDir="false" afterPath="$PROJECT_DIR$/reconhecimento_placa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ctrWeb.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +41,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Star/Desktop/Arquivos Programação Phyton/TCC&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.controleWebcam">
+  <component name="RunManager" selected="Python.reconhecimento_placa">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TCC" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -55,28 +56,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TCCpy/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="controleWebcam" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TCC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/controleWebcam.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -107,9 +86,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="reconhecimento_placa" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TCC" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Star\Desktop\Arquivos Programação Phyton\TCC\reconhecimento_placa.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.controleWebcam" />
+        <item itemvalue="Python.reconhecimento_placa" />
         <item itemvalue="Python.reconhecimento" />
         <item itemvalue="Python.app" />
       </list>
@@ -125,8 +126,16 @@
       <updated>1658777329773</updated>
       <workItem from="1658777331170" duration="1677000" />
       <workItem from="1658783737319" duration="648000" />
-      <workItem from="1659277026058" duration="9111000" />
+      <workItem from="1659277026058" duration="14146000" />
     </task>
+    <task id="LOCAL-00001" summary="Melhoria na classe de conexão.">
+      <created>1659322645198</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659322645198</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +176,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Melhoria na classe de conexão." />
+    <option name="LAST_COMMIT_MESSAGE" value="Melhoria na classe de conexão." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TCC$app.coverage" NAME="app Coverage Results" MODIFIED="1658778166121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TCCpy" />

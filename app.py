@@ -1,7 +1,11 @@
-import conexao
+import reconhecimento_placa as rp
+import reconhecimento_caracter as rc
 
-class Carro():
-    def __init__(self):
-        conexao.Connection.__init__(self)
+if __name__ == "__main__":
+    rp.reconhecePlaca()
+    rc.Reconhece().reconheceCaracter()
 
-
+    if(rc.Reconhece().validaPlaca()):
+        print("Placa permitida! ")
+    else:
+        print("Placa Negada! ")
