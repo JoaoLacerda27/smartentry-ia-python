@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57f8d1b5-bfe2-491c-9566-2bb9a7a078be" name="Changes" comment="Primeiros passos na implementação da lógica que acessa o banco e valida a placa">
+    <list default="true" id="57f8d1b5-bfe2-491c-9566-2bb9a7a078be" name="Changes" comment="Correção do acesso ao Banco. Implementação inicial da integração entre Reconhecimento x Consulta.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conexao.py" beforeDir="false" afterPath="$PROJECT_DIR$/conexao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crud.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/imgs/reconhecimento.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/reconhecimento.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reconhecimento_caracter.py" beforeDir="false" afterPath="$PROJECT_DIR$/reconhecimento_caracter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reconhecimento_placa.py" beforeDir="false" afterPath="$PROJECT_DIR$/reconhecimento_placa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reconhecimento_placa.py" beforeDir="false" afterPath="$PROJECT_DIR$/processamento_img.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +108,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="processamento_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TCC" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Star\Desktop\Arquivos Programação Phyton\TCC\processamento_img.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="reconhecimento" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TCC" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -131,33 +152,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="reconhecimento_placa" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TCC" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Star\Desktop\Arquivos Programação Phyton\TCC\reconhecimento_placa.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app (1)" />
         <item itemvalue="Python.conexao" />
-        <item itemvalue="Python.reconhecimento_placa" />
+        <item itemvalue="Python.processamento_img" />
         <item itemvalue="Python.reconhecimento" />
         <item itemvalue="Python.app" />
       </list>
@@ -177,7 +176,8 @@
       <workItem from="1659387556561" duration="1959000" />
       <workItem from="1659463651687" duration="2497000" />
       <workItem from="1659667854277" duration="4184000" />
-      <workItem from="1659978212973" duration="13330000" />
+      <workItem from="1659978212973" duration="13795000" />
+      <workItem from="1660056235278" duration="8181000" />
     </task>
     <task id="LOCAL-00001" summary="Melhoria na classe de conexão.">
       <created>1659322645198</created>
@@ -193,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659330353444</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Correção do acesso ao Banco. Implementação inicial da integração entre Reconhecimento x Consulta.">
+      <created>1660015898755</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660015898756</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +245,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Melhoria na classe de conexão." />
     <MESSAGE value="Primeiros passos na implementação da lógica que acessa o banco e valida a placa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Primeiros passos na implementação da lógica que acessa o banco e valida a placa" />
+    <MESSAGE value="Correção do acesso ao Banco. Implementação inicial da integração entre Reconhecimento x Consulta." />
+    <option name="LAST_COMMIT_MESSAGE" value="Correção do acesso ao Banco. Implementação inicial da integração entre Reconhecimento x Consulta." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -249,7 +257,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TCC$app.coverage" NAME="app Coverage Results" MODIFIED="1658778166121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TCCpy" />
-    <SUITE FILE_PATH="coverage/TCC$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1660015764763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TCC$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1660072204631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TCC$controleWebcam.coverage" NAME="controleWebcam Coverage Results" MODIFIED="1659291538860" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TCC$reconhecimento.coverage" NAME="reconhecimento Coverage Results" MODIFIED="1659283092835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TCC$conexao.coverage" NAME="conexao Coverage Results" MODIFIED="1660013920629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

@@ -51,18 +51,9 @@ class Connection(Config):
         self.cursor.execute(sql, params or ())
         return self.fetchall()
 
-class Carro(Connection):
+class CarroMorador(Connection):
     def __init__(self):
         Connection.__init__(self)
-
-    def insert(self, *args):
-        try:
-            sql = f"INSERT INTO ecarro (placa, status) values (%s, %s)"
-            self.execute(sql, args)
-            self.commit()
-            print("Registro inserido")
-        except Exception as e:
-            print("Erro ao inserir", e)
 
     def update(self, *args):
         try:
@@ -92,6 +83,33 @@ class Carro(Connection):
         if data:
             return data
         return "Registro não encontrado"
+
+class CarroVisitante(Connection):
+    def __init__(self):
+        Connection.__init__(self)
+
+    def update(self, *args):
+        try:
+            sql = f"UPDATE vcarro SET placa = %s WHERE id = %s"
+            self.execute(sql, args)
+            self.commit()
+            print("Registro atualizado!")
+        except Exception as e:
+            print("Erro ao atualizar. Error: ", e)
+
+class CarroEmpresa(Connection):
+    def __init__(self):
+        Connection.__init__(self)
+
+    def update(self, *args):
+        try:
+            sql = f"UPDATE ecarro SET placa = %s WHERE id = %s"
+            self.execute(sql, args)
+            self.commit()
+            print("Registro atualizado!")
+        except Exception as e:
+            print("Erro ao atualizar. Error: ", e)
+
 
 
 
