@@ -45,11 +45,60 @@ class Connection(Config):
         return self.cursor.fetchall()
 
     def execute(self, sql, params=None):
-        self.cursos.execute(sql, params or ())
+        self.cursor.execute(sql, params or ())
 
     def query(self, sql, params=None):
-        self.cursos.execute(sql, params or ())
+        self.cursor.execute(sql, params or ())
         return self.fetchall()
+
+class Carro(Connection):
+    def __init__(self):
+        Connection.__init__(self)
+
+    def insert(self, *args):
+        try:
+            sql = f"INSERT INTO ecarro (placa, status) values (%s, %s)"
+            self.execute(sql, args)
+            self.commit()
+            print("Registro inserido")
+        except Exception as e:
+            print("Erro ao inserir", e)
+
+    def update(self, *args):
+        try:
+            sql = f"UPDATE ecarro SET placa = %s WHERE id = %s"
+            self.execute(sql, args)
+            self.commit()
+            print("Registro atualizado!")
+        except Exception as e:
+            print("Erro ao atualizar ", e)
+
+    def delete(self, id):
+        try:
+            sql_search = "SELECT"
+
+            if not self.query(sql_search):
+                return "Registro não encontrado para delete"
+            sql_delete = f"DELETE FROM"
+
+            self.execute(sql_delete)
+            self.commit()
+        except Exception as e:
+            print("Erro ao inserir", e)
+
+    def search(self, *args):
+        sql = f"SELECT * FROM ecarro WHERE placa = %s"
+        data = self.query(sql, args)
+        if data:
+            return data
+        return "Registro não encontrado"
+
+
+
+
+
+
+
 
 
 

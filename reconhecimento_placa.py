@@ -10,7 +10,6 @@ def reconhecePlaca():
 
             conts = encontrar_contornos(preProcessamentoContornos(frame))
 
-            localizacao = 0
             for c in conts:
                 peri = cv2.arcLength(c, True)
                 if peri > 120:
