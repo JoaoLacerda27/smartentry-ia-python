@@ -1,7 +1,11 @@
-import asyncio
+import time
+
 import cv2
 import processamento_img as pi
 import reconhecimento_caracter as rc
+import portao as classePortao
+
+portao = classePortao.Portao
 
 def reconhecePlaca():
     reconhece_caracter = rc.Reconhece()
@@ -22,11 +26,11 @@ def reconhecePlaca():
                         roi = frame[y + 3:(y + larg) - 3, x + 5:(x + alt) - 5]
                         pi.preProcessamentoPlaca(roi)
                         if (reconhece_caracter.validaPlaca()):
-                            print("SINAL ABRE PORTÃO")
-                            # await asyncio.sleep(0.5)
+                            portao.abrePortao()
+                            time.sleep(5)
+                            portao.fechaPortao()
                         else:
                             print("SINAL NÃO ABRE PORTÃO")
-                            # await asyncio.sleep(0.2)
 
             cv2.imshow("SmartEntry", frame)
 
