@@ -3,11 +3,10 @@ import time
 import cv2
 import processamento_img as pi
 import reconhecimento_caracter as rc
-import portao as classePortao
-
-portao = classePortao.Portao
+import arduino as UNO
 
 def reconhecePlaca():
+    arduino = UNO.Arduino()
     reconhece_caracter = rc.Reconhece()
     webcam = cv2.VideoCapture(0)
     if webcam.isOpened():
@@ -26,9 +25,9 @@ def reconhecePlaca():
                         roi = frame[y + 3:(y + larg) - 3, x + 5:(x + alt) - 5]
                         pi.preProcessamentoPlaca(roi)
                         if (reconhece_caracter.validaPlaca()):
-                            portao.abrePortao()
-                            time.sleep(5)
-                            portao.fechaPortao()
+                            arduino.abrePortao()
+                            time.sleep(4)
+                            arduino.fechaPortao()
                         else:
                             print("SINAL NÃO ABRE PORTÃO")
 
