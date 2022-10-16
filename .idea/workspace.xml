@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57f8d1b5-bfe2-491c-9566-2bb9a7a078be" name="Changes" comment="Implementação da Movimentação do motor e reconhecimento do Sensor, e, adequação inicial a classe principal">
-      <change beforePath="$PROJECT_DIR$/.idea/TCC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TCC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/reconhecimento.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/reconhecimento.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portao.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensor.py" beforeDir="false" />
-    </list>
+    <list default="true" id="57f8d1b5-bfe2-491c-9566-2bb9a7a078be" name="Changes" comment="Correção das classes, e funcionamento do Arduino integrado com o Python" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -221,7 +213,7 @@
       <workItem from="1665288041798" duration="4259000" />
       <workItem from="1665368819887" duration="1179000" />
       <workItem from="1665811152120" duration="6605000" />
-      <workItem from="1665891107005" duration="2575000" />
+      <workItem from="1665891107005" duration="3236000" />
     </task>
     <task id="LOCAL-00001" summary="Melhoria na classe de conexão.">
       <created>1659322645198</created>
@@ -272,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664684378853</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Correção das classes, e funcionamento do Arduino integrado com o Python">
+      <created>1665893791408</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665893791408</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +319,8 @@
     <MESSAGE value="Correção do acesso ao Banco. Implementação inicial da integração entre Reconhecimento x Consulta." />
     <MESSAGE value="Validação da placa em tempo real" />
     <MESSAGE value="Implementação da Movimentação do motor e reconhecimento do Sensor, e, adequação inicial a classe principal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementação da Movimentação do motor e reconhecimento do Sensor, e, adequação inicial a classe principal" />
+    <MESSAGE value="Correção das classes, e funcionamento do Arduino integrado com o Python" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correção das classes, e funcionamento do Arduino integrado com o Python" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
